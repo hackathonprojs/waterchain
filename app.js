@@ -39,4 +39,7 @@ function txHandler(state, tx, chainInfo){
 }
 
 app.use(txHandler);
-app.listen(3000);
+app.listen(3000).then(appInfo => {
+  console.log(appInfo.GCI)
+  // 'f6d671670ce307f71164c7e9b7c1d89c0cf5a6456ddf0a538d59bdbd33216ec5'
+})
