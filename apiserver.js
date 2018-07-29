@@ -18,8 +18,8 @@ app.get('/helloexpress', (request, response) => {
 });
 
 app.all('/addData', (request, response) => {
-  let type = request.body.type;
-  let confidence = request.body.confidence;
+  let type = request.param('type');
+  let confidence = request.param('confidence');
   console.log("type: ", type);
   console.log("confidence: ", confidence);
 
