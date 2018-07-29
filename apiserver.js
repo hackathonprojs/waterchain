@@ -10,9 +10,37 @@ const requestLib = require('request');
 const app = express()
 const port = 8000
 
+app.use(express.json());       // to support JSON-encoded bodies
+app.use(express.urlencoded()); // to support URL-encoded bodies
+
 app.get('/helloexpress', (request, response) => {
   response.send('Hello from Express!')
 });
+
+app.all('/addData', (request, response) => {
+  let type = request.body.type;
+  let confidence = request.body.confidence;
+  console.log("type: ", type);
+  console.log("confidence: ", confidence);
+
+  var options = {
+    uri: 'http://localhost:3000/txs',
+    method: 'POST',
+    json: {
+      "type": type,
+      "confidence": confidence,
+    }
+  };
+
+  requestLib(options, (err, res, body) => {
+    if (err) { return console.log(err); }
+    console.log(body.url);
+    console.log(body.explanation);
+    console.log("body: ", body);
+
+    response.send(body);
+  })
+})
 
 app.get('/latest', (request, response) => {
   // call lotion node
