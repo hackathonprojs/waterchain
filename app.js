@@ -1,7 +1,6 @@
 let lotion = require('lotion')
 
 let initialState = {
-  last: null,
   latest: {
     type: undefined, // string
     confidence: -1, // number
