@@ -21,6 +21,8 @@ http://localhost:8000/history
 to get entire state:
 http://localhost:8000/state
 
+presentation at goo.gl/Xw32za
+
 
 
 

@@ -21,6 +21,7 @@ let opts = {
 let app = lotion(opts)
 
 function txHandler(state, tx, chainInfo){
+console.log(tx);
   if (tx.type && tx.confidence) {
     let blockHeight = chainInfo.height;
     let tuple = {
