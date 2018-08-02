@@ -12,6 +12,9 @@ sample call:
 
 ## to run the api server
 
+add a data point:
+http://localhost:8000/addData?type=type4&confidence=23.423156
+
 to get latest: 
 http://localhost:8000/latest
 
